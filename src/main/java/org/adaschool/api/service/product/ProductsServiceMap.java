@@ -3,11 +3,16 @@ package org.adaschool.api.service.product;
 import org.adaschool.api.repository.product.Product;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
 public class ProductsServiceMap implements ProductsService {
+
+    Map<String, Product> products = new HashMap<>();
+
     @Override
     public Product save(Product product) {
         return null;

@@ -1,6 +1,7 @@
 package org.adaschool.api.service.user;
 
 import org.adaschool.api.repository.user.User;
+import org.adaschool.api.repository.user.UserDto;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,5 +16,5 @@ public interface UsersService {
 
     void deleteById(String id);
 
-    User update(User user, String userId);
+    User update(UserDto user, String userId);
 }

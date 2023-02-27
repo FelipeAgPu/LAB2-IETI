@@ -1,6 +1,7 @@
 package org.adaschool.api.service.user;
 
 import org.adaschool.api.repository.user.User;
+import org.adaschool.api.repository.user.UserDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public class UsersServiceMap implements UsersService {
     }
 
     @Override
-    public User update(User user, String userId) {
+    public User update(UserDto user, String userId) {
         return null;
     }
 }
