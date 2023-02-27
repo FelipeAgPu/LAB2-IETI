@@ -25,15 +25,16 @@ public class UsersController {
     }
 
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody User user) {
-        URI createdUserUri = URI.create("");
-        return ResponseEntity.created(createdUserUri).body(usersService.save(user));
+    public ResponseEntity<User> createUser(@RequestBody UserDto user) {
+        User newUser = new User(user);
+        URI createdUserUri = URI.create("http://localhost:8080/v1/users/" + newUser.getId());
+        return ResponseEntity.created(createdUserUri).body(usersService.save(newUser));
     }
 
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
-
-        return ResponseEntity.ok(usersService.all());
+        List<User> users = usersService.all();
+        return ResponseEntity.ok(users);
     }
 
     @GetMapping("{id}")
